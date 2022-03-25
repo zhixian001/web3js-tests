@@ -1,8 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
+
+import MetaMaskCard from './components/connectors/MetaMaskCard';
+import ProviderExample from './components/ProviderExample';
 
 function App() {
-  return <p>{JSON.stringify(process.env)}</p>;
+  return (
+    <>
+      <ProviderExample />
+      <div
+        style={{ display: 'flex', flexFlow: 'wrap', fontFamily: 'sans-serif' }}
+      >
+        <MetaMaskCard />
+      </div>
+    </>
+  );
 }
 
 export default App;
