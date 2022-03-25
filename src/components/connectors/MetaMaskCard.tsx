@@ -26,7 +26,7 @@ export default function MetaMaskCard() {
 
   const provider = useProvider();
   const ENSNames = useENSNames(provider);
-
+  
   // attempt to connect eagerly on mount
   useEffect(() => {
     void metaMask.connectEagerly();
