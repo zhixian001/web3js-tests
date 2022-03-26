@@ -5,6 +5,9 @@ import ProviderExample from './components/ProviderExample';
 
 import SampleComponent from './components/SampleComponent';
 
+import { Card } from './components/Card';
+import { UniSwap } from './components/UniSwap';
+
 function App() {
   return (
     <>
@@ -17,6 +20,10 @@ function App() {
       <div>
         <SampleComponent />
       </div>
+      <Card>
+        <h3>UniSwap</h3>
+        <UniSwap></UniSwap>
+      </Card>
     </>
   );
 }
