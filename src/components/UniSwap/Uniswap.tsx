@@ -18,8 +18,11 @@ export function UniSwap() {
     setInputTokenAmount(event.target.value);
   }, []);
 
-  const uniSwapFormOnSubmit = useCallback(() => {
-    alert(`${inputTokenType} : ${inputTokenAmount}`);
+  const uniSwapFormOnSubmit = useCallback((event: any) => {
+    // prevent page reload...
+    event.preventDefault();
+
+    alert(`Wraping / Unwrapping "${inputTokenType} : ${inputTokenAmount}" to "${inputTokenType === 'ETH' ? 'WETH' : 'ETH'}"`);
   }, [inputTokenAmount, inputTokenType]);
 
   return (
@@ -28,7 +31,7 @@ export function UniSwap() {
         <WETHBalance />
       </div>
 
-      <form onSubmit={uniSwapFormOnSubmit}>
+      <form onSubmit={uniSwapFormOnSubmit} method='POST' >
         <label>
           <input
             type="radio"
